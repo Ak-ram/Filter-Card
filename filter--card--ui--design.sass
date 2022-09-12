@@ -1,0 +1,115 @@
+$base_NO: 25px
+$font-size: .7rem
+$theme: ('alpha':#1f1f3b,'beta':#A7A7BF, 'gamma':#4444c340, 'delta': #4744c4,'delta1': #2A2A43)
+%h-v-centering
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100vh
+%card-shadow
+    content: ""
+    position: absolute
+    left: 50%
+    background: map-get($theme,'delta' )
+    height: $base_NO
+    width: 80%
+    border-radius: $base_NO - 10
+    transform: translate(-50%,-50%)
+    z-index: -3
+%label
+    flex-basis: 50%
+    font-size: $font-size
+    display: flex
+    align-items: center
+    gap: 5px
+    z-index: 4
+%reset
+    margin: 0
+    padding: 0
+.hidden
+    display: none
+.fade
+    opacity: 0
+    transition: opacity .3s
+body
+    @extend %h-v-centering
+    @extend %reset
+    background-color: map-get($theme,'delta1' )
+.card
+    background-color: map-get($theme,'alpha' )
+    width: 220px
+    border-radius: $base_NO - 5
+    padding: $base_NO
+    color: map-get($theme,'beta' )
+    position: relative
+    font-family: 'Montserrat', sans-serif
+    user-select: none
+    .mouse-follow-circle
+        position: absolute
+        transform-origin: center
+        border-radius: 50%
+        width: 10px
+        height: 10px
+        outline: 7px double map-get($theme,'delta')
+        z-index: 4
+    h6
+        margin: 10px 0px
+    label
+        @extend %label
+    &::after,&::before
+        @extend %card-shadow
+    &::before
+        top: 0px
+    &::after
+        bottom: -$base_NO
+    .card__location
+        display: flex
+        flex-direction: column
+        margin: 0
+        position: relative
+        div#location
+            border: 1px solid map-get($theme,'delta')
+            background: map-get($theme,'gamma')
+            height: $base_NO + 5
+            border-radius: 5px
+            outline: none
+            color: map-get($theme,'beta' )
+            line-height: $base_NO + 5
+            padding: 0 5px
+            font-size: $font-size
+            cursor: pointer
+            display: flex
+            align-items: center
+            z-index: 5
+            svg
+                width: 15px
+                height: 15px
+                margin: 0 5px 0px 0px
+        ul#countries-menu
+            position: absolute
+            background:  map-get($theme,'alpha')
+            width: 100%
+            list-style: none
+            margin: 0
+            padding: 0
+            top: 110%
+            box-shadow: 0 0 2px map-get($theme,'delta')
+            z-index: 5
+            > li
+                padding: 5px
+                font-size: $font-size
+                text-transform: capitalize
+                border-top: 1px solid map-get($theme,'gamma')
+                cursor: pointer
+                &:hover
+                    background: map-get($theme,'gamma')
+    .card__experience--level
+        margin: 30px 0
+        .levels
+            display: flex
+            flex-wrap: wrap
+            height: 50px
+    .card__target
+        margin: 10px 0px
+        .targets
+            display: flex

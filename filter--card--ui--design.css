@@ -1,0 +1,135 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card::after, .card::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  background: #4744c4;
+  height: 25px;
+  width: 80%;
+  border-radius: 15px;
+  transform: translate(-50%, -50%);
+  z-index: -3;
+}
+
+.card label {
+  flex-basis: 50%;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 4;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.fade {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+body {
+  background-color: #2A2A43;
+}
+
+.card {
+  background-color: #1f1f3b;
+  width: 220px;
+  border-radius: 20px;
+  padding: 25px;
+  color: #A7A7BF;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  user-select: none;
+}
+.card .mouse-follow-circle {
+  position: absolute;
+  transform-origin: center;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  outline: 7px double #4744c4;
+  z-index: 4;
+}
+.card h6 {
+  margin: 10px 0px;
+}
+.card::before {
+  top: 0px;
+}
+.card::after {
+  bottom: -25px;
+}
+.card .card__location {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  position: relative;
+}
+.card .card__location div#location {
+  border: 1px solid #4744c4;
+  background: #4444c340;
+  height: 30px;
+  border-radius: 5px;
+  outline: none;
+  color: #A7A7BF;
+  line-height: 30px;
+  padding: 0 5px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  z-index: 5;
+}
+.card .card__location div#location svg {
+  width: 15px;
+  height: 15px;
+  margin: 0 5px 0px 0px;
+}
+.card .card__location ul#countries-menu {
+  position: absolute;
+  background: #1f1f3b;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  top: 110%;
+  box-shadow: 0 0 2px #4744c4;
+  z-index: 5;
+}
+.card .card__location ul#countries-menu > li {
+  padding: 5px;
+  font-size: 0.7rem;
+  text-transform: capitalize;
+  border-top: 1px solid #4444c340;
+  cursor: pointer;
+}
+.card .card__location ul#countries-menu > li:hover {
+  background: #4444c340;
+}
+.card .card__experience--level {
+  margin: 30px 0;
+}
+.card .card__experience--level .levels {
+  display: flex;
+  flex-wrap: wrap;
+  height: 50px;
+}
+.card .card__target {
+  margin: 10px 0px;
+}
+.card .card__target .targets {
+  display: flex;
+}
